@@ -1,103 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    TODO:
+    - Search and replace _package_name to your package name
+    - Search and replace _version to your package version (e.g., v0.4.5)
+    - Search and replace _latest_main to your latest main version (e.g., v0.4.5)
+    - Search and replace _link to your package link (e.g. git+https://github.com/kenn-cal/_package_name@_version#egg=_package_name-_norm_version)
+    - Search and replace _norm_version to your package version without the 'v' prefix
+    - Search and replace _author to your package author
+    - Search and replace _long_description to the URL of your package readme.md
+    - Search and replace _homepage to your package homepage
+-->
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-  
-  <!-- Skeleton CSS -->
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet" />
-  
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet" type="text/css" />
-  
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  
-  <!-- Marked parser -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  
-  <!-- Favicon -->
-  <link href="https://gist.githubusercontent.com/astariul/c09af596e802e945d3032774e10e1047/raw/f693a2e2b65966494da082887bc4be2917f615e4/random_icon.svg" rel="icon" />
-  
-  <!-- Custom Styles -->
-  <link href="../static/package_styles.css" rel="stylesheet" />
-  
-  <!-- Our JS -->
-  <script type="text/javascript" src="../static/pypi_checker.js"></script>
-  <script src="../static/package_page.js" defer></script>
-  
-  <title>
-    Pypi - YourCompany
-  </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+    <!-- Skeleton CSS -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+          rel="stylesheet"/>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"
+          type="text/css"/>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- Marked parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Favicon -->
+    <link href="" rel="icon"/>
+
+    <!-- Custom Styles -->
+    <link href="../static/package_styles.css" rel="stylesheet"/>
+
+    <!-- Our JS -->
+    <script type="text/javascript" src="../static/pypi_checker.js"></script>
+    <script src="../static/package_page.js" defer></script>
+
+    <title>
+        Pypi - M'kata
+    </title>
 </head>
-  
+
 <body>
-  <div class="container">
+<div class="container">
     <section class="header">
-      <button onclick="redirectToIndex()" class="goback-button">
-        <svg width="50" height="50">
-          <circle cx="25" cy="25" r="20" fill="#1EAEDB" />
-          <path d="M15 25l10-10v5h10v10h-10v5z" fill="white" />
-        </svg>
-      </button>
-      _package_name
-      <span>
+        <button onclick="redirectToIndex()" class="goback-button">
+            <svg width="50" height="50">
+                <circle cx="25" cy="25" r="20" fill="#1EAEDB"/>
+                <path d="M15 25l10-10v5h10v10h-10v5z" fill="white"/>
+            </svg>
+        </button>
+        _package_name
+        <span>
       </span>
-      <span id='latest-version' class="version">
+        <span id='latest-version' class="version">
         _version
       </span>
-      <span id='latest-main-version' hidden>
+        <span id='latest-main-version' hidden>
         _latest_main
       </span>
     </section>
-    
+
     <pre id='installdanger' hidden>
       <button class="danger-button" disabled>
-        DANGER ! A higher version of <i>_package_name</i> already exists on PyPi
+        DANGER! A higher version of <i>_package_name</i> already exists on PyPi
       </button>
     </pre>
-    
+
     <pre id='installcmd'>
-      <code>pip install _package_name --extra-index-url https://astariul.github.io/github-hosted-pypi/</code>
+      <code>pip install _package_name --extra-index-url https://kenn-cal.github.io/mkata-index/</code>
     </pre>
-    
-    <hr />
-    
+
+    <hr/>
+
     <div class="row">
-      <div class="three columns">
-        <b>
-          Project links
-        </b>
-        <button id="repoHomepage" onclick="openLinkInNewTab('_homepage')">
-          Homepage
-        </button>
-        <p class="elem">
-          <b>
-            Author :
-          </b>
-          _author
-        </p>
-        <section class="versions" id="versions">
-          <div id="_version" onclick="load_readme('_version', scroll_to_div=true)">
-            <a href="_link">
-              _norm_version
-            </a>
-          </div>
-        </section>
-      </div>
-      
-      <div class="nine columns" id="description_pkg">
-        <h6 class="text-header">
-          Description
-        </h6>
-        <p id="markdown-container" class="readme-block">
-        </p>
-      </div>
+        <div class="three columns">
+            <b>
+                Project links
+            </b>
+            <button id="repoHomepage" onclick="openLinkInNewTab('_homepage')">
+                Homepage
+            </button>
+            <p class="elem">
+                <b>
+                    Author:
+                </b>
+                _author
+            </p>
+            <section class="versions" id="versions">
+                <div id="_version" onclick="load_readme('_version', scroll_to_div=true)">
+                    <a href="_link">
+                        _norm_version
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <div class="nine columns" id="description_pkg">
+            <h6 class="text-header">
+                Description
+            </h6>
+            <p id="markdown-container" class="readme-block">
+            </p>
+        </div>
     </div>
-  </div>
-  
-  <script>
+</div>
+
+<script>
     var url_readme_main = '_long_description';
     
     $(document).ready(function () {
@@ -113,6 +126,6 @@
       }
       load_readme(this_vers);
     });
-  </script>
+</script>
 </body>
 </html>
