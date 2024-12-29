@@ -5,10 +5,10 @@
     - Search and replace v0.0.4 to your package version (e.g., v0.4.5)
     - Search and replace 0.0.4 to your package version without the 'v' prefix
     - Search and replace v0.0.4 to your latest main version (e.g., v0.4.5)
-    - Search and replace git+https://github.com/kenn-cal/mkata-core-py@v0.0.4#egg=mkata-core-0.0.4 to your package link
+    - Search and replace git+https://github.com/kenn-cal/mkata-core@v0.0.4#egg=mkata-core-0.0.4 to your package link
     - Search and replace Kenn Gerard Cal to your package author
-    - Search and replace https://github.com/kenn-cal/mkata-core-py/blob/v0.0.4/README.md to the URL of your package readme.md
-    - Search and replace https://github.com/kenn-cal/mkata-core-py/tree/v0.0.4 to your package homepage
+    - Search and replace https://github.com/kenn-cal/mkata-core/blob/v0.0.4/README.md to the URL of your package readme.md
+    - Search and replace https://github.com/kenn-cal/mkata-core/tree/v0.0.4 to your package homepage
 -->
 <head>
     <!-- Required meta tags -->
@@ -53,7 +53,7 @@
                 <path d="M15 25l10-10v5h10v10h-10v5z" fill="white"/>
             </svg>
         </button>
-        mkata-core-py
+        mkata-core
         <span>
       </span>
         <span id='latest-version' class="version">
@@ -66,12 +66,12 @@
 
     <pre id='installdanger' hidden>
       <button class="danger-button" disabled>
-        DANGER! A higher version of <i>mkata-core-py</i> already exists on PyPi
+        DANGER! A higher version of <i>mkata-core</i> already exists on PyPi
       </button>
     </pre>
 
     <pre id='installcmd'>
-      <code>pip install mkata-core-py --extra-index-url https://kenn-cal.github.io/mkata-index/</code>
+      <code>pip install mkata-core --extra-index-url https://kenn-cal.github.io/mkata-index/</code>
     </pre>
 
     <hr/>
@@ -81,7 +81,7 @@
             <b>
                 Project links
             </b>
-            <button id="repoHomepage" onclick="openLinkInNewTab('https://github.com/kenn-cal/mkata-core-py/tree/v0.0.4')">
+            <button id="repoHomepage" onclick="openLinkInNewTab('https://github.com/kenn-cal/mkata-core/tree/v0.0.4')">
                 Homepage
             </button>
             <p class="elem">
@@ -92,7 +92,7 @@
             </p>
             <section class="versions" id="versions">
                 <div id="v0.0.4" onclick="load_readme('v0.0.4', scroll_to_div=true)">
-                    <a href="git+https://github.com/kenn-cal/mkata-core-py@v0.0.4#egg=mkata-core-0.0.4">
+                    <a href="git+https://github.com/kenn-cal/mkata-core@v0.0.4#egg=mkata-core-0.0.4">
                         0.0.4
                     </a>
                 </div>
@@ -115,7 +115,7 @@
     $(document).ready(function () {
       var this_vers = document.getElementById('latest-main-version').textContent.trim();
       document.getElementById(this_vers).classList.add('main');
-      check_supply_chain_attack("mkata-core-py", this_vers, warn_unsafe);
+      check_supply_chain_attack("mkata-core", this_vers, warn_unsafe);
     
       if (window.location.hash != "") {
         let version_hash = window.location.hash;
