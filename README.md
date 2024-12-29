@@ -46,7 +46,7 @@ Visit [the index](https://kenn-cal.github.io/mkata-index/) and try to install pa
 
 Install the core package `mkata`:
 ```console
-pip install mkata --extra-index-url https://kenn-cal.github.io/mkata-index/
+pip install mkata-core --extra-index-url https://kenn-cal.github.io/mkata-index/
 ```
 
 It will also install the dependencies automagically.
@@ -54,7 +54,7 @@ It will also install the dependencies automagically.
 You can also install a specific version:
 
 ```console
-pip install mkata==0.0.1 --extra-index-url https://kenn-cal.github.io/mkata-index/
+pip install mkata-core==0.0.1 --extra-index-url https://kenn-cal.github.io/mkata-index/
 ```
 
 All packages are private; only those with rights will be able to access them.
