@@ -24,7 +24,7 @@ By Nicolas Remond, adapted for M'kata, a project by Kenn Gerard Cal
 * **😺 GitHub-hosted**
 * **🚀 Template ready to deploy**
 * **🔆 Easy to use** through GitHub Actions
-* **🚨 Secure** : Warns you if your package is vulnerable to supply chain attacks
+* **🚨 Secure**: Warns you if your package is vulnerable to supply chain attacks
 
 ## Description
 
@@ -35,16 +35,16 @@ package publicly available.
 
 ---
 
-_While the PyPi index is public, private packages indexed here are kept private : you will need GitHub authentication to
+_While the PyPi index is public, private packages indexed here are kept private: you will need GitHub authentication to
 be able to retrieve it._
 
 ## Features
 
-Visit [the index](https://kenn-cal.github.io/mkata-index/) and try to install packages indexed there !
+Visit [the index](https://kenn-cal.github.io/mkata-index/) and try to install packages indexed there!
 
 ---
 
-Install the core package `mkata` :
+Install the core package `mkata`:
 ```console
 pip install mkata --extra-index-url https://kenn-cal.github.io/mkata-index/
 ```
@@ -61,7 +61,7 @@ All packages are private; only those with rights will be able to access them.
 
 ## Get started
 
-* Use this template and create your own repository :
+* Use this template and create your own repository:
 
 <p align="center">
     <a href="https://github.com/astariul/github-hosted-pypi/generate">
@@ -73,14 +73,14 @@ All packages are private; only those with rights will be able to access them.
 
 * Go to `Settings` of your repository, and enable GitHub Page
 * Customize `index.html` and `pkg_template.html` to your liking
-* You're ready to go ! Visit `<user>.github.io/<repo_name>` to see your PyPi index
+* You're ready to go! Visit `<user>.github.io/<repo_name>` to see your PyPi index
 
 ## Modify indexed packages
 
 Now that your PyPi index is set up, you can register / update / delete packages indexed.  
 _GitHub actions are set up to do it automatically for you._
 
-You just have to :
+You just have to:
 * Go to the `Actions` tab of your repository
 * Click the right workflow (`register` / `update` / `delete`) and trigger it manually
 * Fill the form and start the workflow
@@ -141,7 +141,7 @@ For example if you have a private package named `tensorflow`, when you register 
 Then you can install it with:
 `pip install my_cool_tensorflow --extra-index-url https://astariul.github.io/github-hosted-pypi/`.
 
-Then from `python`, you can just do :
+Then from `python`, you can just do:
 ```python
 import tensorflow
 ```
@@ -155,9 +155,9 @@ package, to avoid confusion but also for [security](#a-word-about-supply-chain-a
 
 Building a Docker image is not interactive, so there is no prompt to type username and password.  
 Instead, you should put your GitHub credentials in a `.netrc` file, so `pip` can authenticate when cloning from GitHub.  
-To do this securely on Docker, you should use Docker secrets. Here is a quick tutorial on how to do :
+To do this securely on Docker, you should use Docker secrets. Here is a quick tutorial on how to do:
 
-**Step 1** : Save your credentials in a secret file. Follow this example :
+**Step 1**: Save your credentials in a secret file. Follow this example:
 
 ```
 machine github.com
@@ -165,12 +165,12 @@ machine github.com
 	password <gh_pass>
 ```
 
-⚠️ _Syntax is important : ensure you're using **tabulation**, and the line endings are **`\n`**.  
+⚠️ _Syntax is important: ensure you're using **tabulation**, and the line endings are **`\n`**.  
 So careful if you're using an IDE that replace tabs by spaces or if you're on Windows (where line endings are `\r\n`)!_
 
 Let's name this file `gh_auth.txt`.
 
-**Step 2** : Create your Docker file. In the docker file you should mount the secret file in `.netrc`, and run the
+**Step 2**: Create your Docker file. In the docker file you should mount the secret file in `.netrc`, and run the
 command where you need authentication. For example:
 
 ```dockerfile
@@ -180,13 +180,13 @@ FROM python:3
 RUN --mount=type=secret,id=gh_auth,dst=/root/.netrc pip install <package_name> --extra-index-url https://astariul.github.io/github-hosted-pypi/
 ```
 
-**Step 3** : Build your Docker image, specifying the location of the secret created in step 1:
+**Step 3**: Build your Docker image, specifying the location of the secret created in step 1:
 
 `sudo DOCKER_BUILDKIT=1 docker build --secret id=gh_auth,src=./gh_auth.txt .`
 
 ---
 
-**_If you have any questions or ideas to improve this FAQ, please open a PR / blank issue !_**
+**_If you have any questions or ideas to improve this FAQ, please open a PR / blank issue!_**
 
 ## A word about supply chain attacks
 
@@ -227,7 +227,7 @@ If you come across anything weird / that can be improved, please get in touch!
 It's just a glorified version, with cleaner pages and GitHub actions for easily adding, updating and removing packages
 from your index.
 
-Also check the [blogpost](https://www.freecodecamp.org/news/how-to-use-github-as-a-pypi-server-1c3b0d07db2/) of the original author !
+Also check the [blogpost](https://www.freecodecamp.org/news/how-to-use-github-as-a-pypi-server-1c3b0d07db2/) of the original author!
 
 ---
 
